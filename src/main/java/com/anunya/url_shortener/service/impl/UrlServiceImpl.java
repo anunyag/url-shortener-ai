@@ -47,4 +47,12 @@ public class UrlServiceImpl implements UrlService {
 
         return code;
     }
+    @Override
+public String getLongUrl(String shortCode) {
+
+    Url url = urlRepository.findByShortCode(shortCode)
+            .orElseThrow(() -> new RuntimeException("Short URL not found"));
+
+    return url.getLongUrl();
+}
 }

@@ -7,4 +7,5 @@ public interface UrlService {
 
     CreateShortUrlResponse createShortUrl(CreateShortUrlRequest request);
 
+    String getLongUrl(String shortCode);
 }
